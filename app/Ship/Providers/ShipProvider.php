@@ -6,6 +6,9 @@ use App\Ship\Parents\Providers\MainProvider;
 use Barryvdh\Debugbar\Facade;
 use Barryvdh\Debugbar\ServiceProvider;
 
+use Illuminate\Support\Facades\View;
+use App\Containers\Theme\Models\Theme;
+
 /**
  * Class ShipProvider
  *

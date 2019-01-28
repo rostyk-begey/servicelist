@@ -1,84 +1,71 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.one_column_template')
 
-    <title>Apiato</title>
+@section('title', 'Welcome page')
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+@section('header')
 
-    <!-- Styles -->
-    <style>
-        html, body {
-            background-color: #fff;
-            color: #636b6f;
-            font-family: 'Raleway', sans-serif;
-            font-weight: 100;
-            height: 100vh;
-            margin: 0;
-        }
-        .full-height {
-            height: 100vh;
-        }
-        .flex-center {
-            align-items: center;
-            display: flex;
-            justify-content: center;
-        }
-        .position-ref {
-            position: relative;
-        }
-        .top-right {
-            position: absolute;
-            right: 10px;
-            top: 18px;
-        }
-        .content {
-            text-align: center;
-        }
-        .title {
-            font-size: 150px;
-            color: #00bdf4;
-        }
-        .links > a {
-            color: #636b6f;
-            padding: 0 25px;
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: .1rem;
-            text-decoration: none;
-            text-transform: uppercase;
-        }
-        .m-b-md {
-            margin-bottom: 60px;
-        }
-    </style>
-</head>
-<body>
-<div class="flex-center position-ref full-height">
-    @if (Route::has('login'))
-        <div class="top-right links">
-            @auth
-                <a href="{{ url('/home') }}">Home</a>
-                @else
-                    <a href="{{ route('login') }}">Login</a>
-                    <a href="{{ route('register') }}">Register</a>
-                    @endauth
+    @include('layouts.components.header')
+
+@endsection
+
+@section('content')
+
+    {{--<div class="container-fluid" style="min-height: 70vh">
+        <div class="col-12 d-flex flex-column justify-content-center align-content-center h-100">
+
+            <h1 class="title m-b-md mx-auto display-1">Service list</h1>
+
+            <div class="links mx-auto">
+                <a href="#">Documentation</a>
+                <a href="https://github.com/maxinoxoft/servicelist">GitHub</a>
+            </div>
+
         </div>
-    @endif
+    </div>--}}
 
-    <div class="content">
-
-        <div class="title m-b-md">Apiato</div>
-
-        <div class="links">
-            <a href="http://apiato.io/">Documentation</a>
-            <a href="https://github.com/apiato/apiato">GitHub</a>
+    <div class="container">
+        @if(isset($flash_message))
+            <div class="row">
+                <h1>{{ $flash_message }}</h1>
+            </div>
+        @endif
+        <div class="row">
+            <form action="/categories" class="card col-5 mx-auto" method="post">
+                @csrf
+                <div class="card-header">
+                    <h3 class="card-title">Add category</h3>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label class="form-label">Name</label>
+                        <input type="text" class="form-control" name="example-text-input" placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Parent category</label>
+                        <select class="form-control custom-select">
+                            <option value="null">None</option>
+                            @if(isset($categories))
+                                @foreach($categories as $category)
+                                    <option value="{{ $category->name }}">{{ $category->name }}</option>
+                                @endforeach
+                            @endif
+                        </select>
+                    </div>
+                </div>
+                <div class="card-footer text-right">
+                    <div class="d-flex">
+                        <a href="javascript:void(0)" class="btn btn-link">Cancel</a>
+                        <button type="submit" class="btn btn-primary ml-auto">Send data</button>
+                    </div>
+                </div>
+            </form>
         </div>
+
     </div>
-</div>
-</body>
-</html>
+@endsection
+
+@section('footer')
+
+    @include('layouts.components.footer')
+
+@endsection

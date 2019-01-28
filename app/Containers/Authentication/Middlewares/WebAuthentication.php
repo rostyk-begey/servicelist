@@ -31,7 +31,7 @@ class WebAuthentication extends Middleware
      */
     public function __construct(Guard $auth)
     {
-        $this->auth = $auth;
+        //$this->auth = $auth;
     }
 
     /**

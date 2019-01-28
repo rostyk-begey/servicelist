@@ -1,5 +1,11 @@
 <?php
 
+$sub_links = [
+    'pages_sub_nemu' => [
+        [ 'name'=>'Categories', 'link'=>"#", 'icon_class'=>'fe-user', 'sub_menu'=>[] ],
+        [ 'name'=>'Categories add', 'link'=>"#", 'icon_class'=>'fe-settings', 'sub_menu'=>[] ],
+    ],
+];
 return [
 
     /*
@@ -16,8 +22,8 @@ return [
             [ 'name'=>'FAQ', 'link'=>'#', 'icon_class'=>'', 'sub_menu'=>[] ],
         ],
         'footer_menu_links' => [
-            [ 'name'=>'Link 1', 'link'=>'#', 'icon_class'=>'', 'sub_menu'=>[] ],
-            [ 'name'=>'Link 2', 'link'=>'#', 'icon_class'=>'', 'sub_menu'=>[] ],
+            [ 'name'=>'Categories', 'link'=>'/categories', 'icon_class'=>'', 'sub_menu'=>[] ],
+            [ 'name'=>'Add category', 'link'=>'/categories/create', 'icon_class'=>'', 'sub_menu'=>[] ],
             [ 'name'=>'Link 3', 'link'=>'#', 'icon_class'=>'', 'sub_menu'=>[] ],
             [ 'name'=>'Link 4', 'link'=>'#', 'icon_class'=>'', 'sub_menu'=>[] ],
             [ 'name'=>'Link 5', 'link'=>'#', 'icon_class'=>'', 'sub_menu'=>[] ],
@@ -40,4 +46,6 @@ return [
         ],
 
     ],
+
+    'sub_links'=> $sub_links,
 ];

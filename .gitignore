@@ -15,3 +15,4 @@
 !public/api/.gitkeep
 public/api/*
 node_modules/*
+/resources/views/tabler-dev/*

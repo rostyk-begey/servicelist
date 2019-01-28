@@ -19,8 +19,13 @@ class CreateCategoryAction extends Action
     public function run(Request $request)
     {
         $data = $request->sanitizeInput([
-            // add your request data here
+            'name',
+            'parent_id'
         ]);
+
+        $parent_id = $data['parent_id'];
+
+        $data['parent_id'] = $parent_id != 'null' ? (int)$parent_id : null;
 
         $category = Apiato::call('Category@CreateCategoryTask', [$data]);
 

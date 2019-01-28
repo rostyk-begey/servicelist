@@ -2,6 +2,7 @@
 
 namespace App\Containers\Category\Providers;
 
+use App\Containers\Category\Models\Category;
 use App\Ship\Parents\Providers\MainProvider;
 
 /**
@@ -28,6 +29,7 @@ class MainServiceProvider extends MainProvider
      */
     public $aliases = [
         // 'Foo' => Bar::class,
+        'Category' => Category::class,
     ];
 
     /**

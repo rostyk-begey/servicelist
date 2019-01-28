@@ -13,9 +13,8 @@
 <div class="page">
     <div class="page-main">
         @yield('header')
-        <div class="container-fluid" style="height: 70vh">
-            @yield('content')
-        </div>
+
+        @yield('content')
     </div>
     @yield('footer')
 </div>

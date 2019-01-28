@@ -17,8 +17,7 @@ class Controller extends WebController
      */
     public function sayWelcome()
     {
-        // No actions to call. Since there's nothing to do but returning a response.
-
-        return view('welcome::welcome-page');
+        //return view('welcome::welcome-page');
+        return view('category::category_create');
     }
 }

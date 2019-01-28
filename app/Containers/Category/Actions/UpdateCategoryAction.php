@@ -19,7 +19,9 @@ class UpdateCategoryAction extends Action
     public function run(Request $request)
     {
         $data = $request->sanitizeInput([
-            // add your request data here
+            'id',
+            'name',
+            'parent_id'
         ]);
 
         $category = Apiato::call('Category@UpdateCategoryTask', [$request->id, $data]);

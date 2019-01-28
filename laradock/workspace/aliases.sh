@@ -95,7 +95,7 @@ alias xvfb="Xvfb -ac :0 -screen 0 1024x768x16 &"
 # requires installation of 'https://www.npmjs.com/package/npms-cli'
 alias npms="npms search"
 # requires installation of 'https://www.npmjs.com/package/package-menu-cli'
-alias pm="package-menu"
+alias pm="package-main_menu"
 # requires installation of 'https://www.npmjs.com/package/pkg-version-cli'
 alias pv="package-version"
 # requires installation of 'https://github.com/sindresorhus/latest-version-cli'

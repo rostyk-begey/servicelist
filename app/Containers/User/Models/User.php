@@ -1,4 +1,6 @@
-<?php
+<?php /** @noinspection ALL */
+
+/** @noinspection ALL */
 
 namespace App\Containers\User\Models;
 
@@ -32,7 +34,9 @@ class User extends UserModel implements ChargeableInterface
      * @var array
      */
     protected $fillable = [
-        'name',
+        'first_name',
+        'last_name',
+        'logo',
         'email',
         'password',
         'device',
@@ -82,5 +86,4 @@ class User extends UserModel implements ChargeableInterface
     {
         return $this->hasMany(PaymentAccount::class);
     }
-
 }
