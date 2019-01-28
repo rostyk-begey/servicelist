@@ -13,34 +13,6 @@
 
 @endsection
 
-{{--@php
-
-    function get_categories($categories) {
-        $data = "";
-
-        foreach ($categories as $category) {
-            if( count($category->childrens())) {
-                $nodes =
-                "   nodes: [".
-                "       ".get_categories($category->childrens()).
-                "   ]";
-            } else {
-                $nodes = "";
-            }
-            $data .=
-            "{\n".
-            "\ttext: '$category->name',\t".
-            "\thref: '#',\t".
-            "\tid: '$category->id',\t".
-            $nodes.
-            "},\t";
-        }
-
-        return $data;
-    }
-
-@endphp--}}
-
 @section('custom_scripts')
 
     <script src="{{ asset('assets/plugins/bootstrap-treeview/js/bootstrap-treeview.js') }}" defer></script>
