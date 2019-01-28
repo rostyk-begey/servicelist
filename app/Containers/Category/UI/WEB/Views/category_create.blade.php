@@ -7,6 +7,7 @@
     @include('layouts.components.header')
 
 @endsection
+
 @section('custom_styles')
 
     <link href="{{ asset('assets/plugins/bootstrap-treeview/css/bootstrap-treeview.css') }}">
