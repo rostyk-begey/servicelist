@@ -55,8 +55,15 @@ class EditCategoryRequest extends Request
      */
     public function authorize()
     {
+<<<<<<< Updated upstream
         return $this->check([
             'hasAccess',
         ]);
+=======
+        /*return $this->check([
+            'hasAccess',
+        ]);*/
+        return true;
+>>>>>>> Stashed changes
     }
 }

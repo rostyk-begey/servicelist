@@ -17,7 +17,7 @@ class CreateCategoryRequest extends Request
      */
     protected $access = [
         'permissions' => '',
-        'roles'       => '',
+        'roles'       => 'guest',
     ];
 
     /**
@@ -55,8 +55,9 @@ class CreateCategoryRequest extends Request
      */
     public function authorize()
     {
-        return $this->check([
+        /*return $this->check([
             'hasAccess',
-        ]);
+        ]);*/
+        return true;
     }
 }
